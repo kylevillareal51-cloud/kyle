@@ -1,0 +1,134 @@
+/* Badminton Club – style.css (hand-written, no frameworks) */
+:root {
+  --bg: #f2f6f8;
+  --surface: #ffffff;
+  --ink: #14202b;
+  --muted: #4b5c6b;
+  --brand: #12304a;
+  --brand-dark: #0b2133;
+  --court: #2f7d5b;
+  --accent: #c8e23a;
+  --line: #cdd9e1;
+  --font-body: "Segoe UI", system-ui, Arial, sans-serif;
+  --font-head: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+  --radius: 8px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; color: var(--brand); }
+h1 { font-size: 2.1rem; margin: 0 0 .5rem; }
+h2 { font-size: 1.5rem; margin-top: 2rem; }
+h3 { font-size: 1.15rem; }
+p { max-width: 65ch; }
+
+a { color: var(--court); text-underline-offset: 3px; }
+a:hover { color: var(--brand); }
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ---------- Header + nav (Flexbox) ---------- */
+header { background: var(--brand); color: #fff; padding: 1rem 1.25rem; border-bottom: 5px solid var(--accent); }
+.header-inner { max-width: 1000px; margin: 0 auto; display: flex; flex-direction: column; gap: .75rem; }
+.logo { font-family: var(--font-head); font-size: 1.4rem; font-weight: bold; color: #fff; text-decoration: none; }
+.logo:hover { color: var(--accent); }
+
+nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem; }
+nav a {
+  display: block;
+  padding: .45rem .9rem;
+  color: #fff;
+  text-decoration: none;
+  border-radius: var(--radius);
+  transition: background .2s;
+}
+nav a:hover { background: var(--brand-dark); color: #fff; }
+nav a[aria-current="page"] { background: var(--accent); color: var(--ink); font-weight: 600; }
+
+/* ---------- Layout ---------- */
+main { max-width: 1000px; margin: 0 auto; padding: 1.5rem 1.25rem 3rem; }
+
+.hero { display: grid; gap: 1.5rem; align-items: center; }
+.hero img, figure img { width: 100%; height: auto; border-radius: var(--radius); display: block; }
+
+.card-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--court);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+}
+.card h3 { margin-top: 0; }
+
+.facts { display: grid; grid-template-columns: 1fr; gap: .5rem 1.5rem; margin: 1rem 0; }
+.facts dt { font-weight: 700; color: var(--brand); }
+.facts dd { margin: 0 0 .5rem; }
+
+figure { margin: 1.5rem 0; }
+figcaption { font-size: .95rem; color: var(--muted); margin-top: .5rem; }
+
+audio, video { width: 100%; max-width: 640px; display: block; }
+
+.button, button {
+  display: inline-block;
+  background: var(--brand);
+  color: #fff;
+  border: 2px solid var(--brand);
+  border-radius: var(--radius);
+  padding: .65rem 1.4rem;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+.button:hover, button:hover { background: var(--accent); border-color: var(--accent); color: var(--ink); }
+
+/* ---------- Form (stacked on phone) ---------- */
+form { display: flex; flex-direction: column; gap: 1rem; max-width: 520px; }
+.field { display: flex; flex-direction: column; gap: .3rem; }
+label { font-weight: 600; }
+input, select, textarea {
+  font: inherit;
+  padding: .6rem .7rem;
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--ink);
+  width: 100%;
+}
+input:hover, select:hover, textarea:hover { border-color: var(--court); }
+textarea { min-height: 8rem; resize: vertical; }
+.required { color: #b3261e; }
+
+/* ---------- Footer ---------- */
+footer { background: var(--brand-dark); color: #fff; text-align: center; padding: 1.25rem; font-size: .95rem; }
+
+/* ---------- Tablet ---------- */
+@media (min-width: 600px) {
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+  .facts { grid-template-columns: max-content 1fr; }
+  .facts dd { margin: 0; }
+  .header-inner { flex-direction: row; justify-content: space-between; align-items: center; }
+}
+
+/* ---------- Desktop ---------- */
+@media (min-width: 900px) {
+  h1 { font-size: 2.8rem; }
+  .hero { grid-template-columns: 1fr 1fr; }
+  .card-grid { grid-template-columns: repeat(3, 1fr); }
+  main { padding-top: 2.5rem; }
+}

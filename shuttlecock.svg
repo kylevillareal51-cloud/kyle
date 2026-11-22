@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-label="Shuttlecock">
+  <rect width="600" height="400" fill="#12304a"/>
+  <g transform="rotate(-30 300 200)">
+    <path d="M300 110l-70 130h140z" fill="#ffffff"/>
+    <path d="M300 110v130M265 175l-12 65M335 175l12 65" stroke="#c9d6df" stroke-width="4"/>
+    <path d="M225 240h150" stroke="#c8e23a" stroke-width="8"/>
+    <path d="M230 245a70 70 0 0 0 140 0z" fill="#c8e23a"/>
+  </g>
+  <path d="M60 340h480" stroke="#2f7d5b" stroke-width="10" stroke-linecap="round"/>
+</svg>

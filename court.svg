@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-label="Badminton court from above">
+  <rect width="600" height="400" fill="#2f7d5b"/>
+  <g fill="none" stroke="#ffffff" stroke-width="4">
+    <rect x="40" y="40" width="520" height="320"/>
+    <rect x="40" y="68" width="520" height="264"/>
+    <path d="M300 40v320"/>
+    <path d="M170 40v320M430 40v320" stroke-width="3"/>
+    <path d="M40 200h130M430 200h130"/>
+  </g>
+  <rect x="296" y="30" width="8" height="340" fill="#c8e23a"/>
+</svg>
